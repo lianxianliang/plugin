@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+	</head>
+
+	<body>
+
+		<p>可以搜索</p>
+		<div id="Box1"></div>
+		<p>可以懒加载</p>
+		<div id="Box2"></div>
+		<p>可以搜索,懒加载</p>
+		<div id="Box3"></div>
+		<p>都不可以</p>
+		<div id="Box4"></div>
+		
+		<select name="a">
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+			<option value="a">a</option>
+		</select>
+		<select name="b">
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+			<option value="b">b</option>
+		</select>
+
+		<script src="js/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sUtils.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery-1.12.0.lazyLoad-1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#Box1").selctOption({
+					waitTime: 500, //发起请求等待时长
+					searchAble: true, //是否可以搜索
+					lazyLoadAble: false //是否可以懒加载
+				});
+				$("#Box2").selctOption({
+					waitTime: 500, //发起请求等待时长
+					searchAble: false, //是否可以搜索
+					lazyLoadAble: true //是否可以懒加载
+				});
+				$("#Box3").selctOption({
+					waitTime: 500, //发起请求等待时长
+					searchAble: true, //是否可以搜索
+					lazyLoadAble: true //是否可以懒加载
+				});
+				$("#Box4").selctOption({
+					waitTime: 500, //发起请求等待时长
+					searchAble: false, //是否可以搜索
+					lazyLoadAble: false //是否可以懒加载
+				});
+			})
+		</script>
+	</body>
+
+</html>
